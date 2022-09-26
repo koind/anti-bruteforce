@@ -7,7 +7,7 @@ import (
 )
 
 func TestStorage(t *testing.T) {
-	cfg := config.NewConfig("./config.test.yml")
+	cfg := config.NewConfig("../../configs/config.test.yml")
 
 	t.Run("tests login bruteforce", func(t *testing.T) {
 		s := NewStorage(cfg)
@@ -47,7 +47,7 @@ func TestStorage(t *testing.T) {
 
 	t.Run("tests parallel", func(t *testing.T) {
 		t.Parallel()
-		cfg = config.NewConfig("./config.parallel.yml")
+		cfg = config.NewConfig("../../configs/config.parallel.yml")
 		s := NewStorage(cfg)
 		errCount := 0
 		for i := 0; i < 100; i++ {

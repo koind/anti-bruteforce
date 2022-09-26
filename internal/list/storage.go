@@ -17,14 +17,16 @@ type Storage struct {
 
 type Config interface {
 	GetRedisAddr() string
+	GetPassword() string
+	GetDBNumber() int
 }
 
 func NewStorage(config Config) *Storage {
 	return &Storage{
 		r: redis.NewClient(&redis.Options{
 			Addr:     config.GetRedisAddr(),
-			Password: "",
-			DB:       0,
+			Password: config.GetPassword(),
+			DB:       config.GetDBNumber(),
 		}),
 	}
 }

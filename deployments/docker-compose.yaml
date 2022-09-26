@@ -6,7 +6,7 @@ services:
       context: ../anti-bruteforce-master
       dockerfile: ../build/service/Dockerfile
     ports:
-      - ${GRPC_PORT}:50051
+      - "50051:50051"
     depends_on:
       - redis
   redis:

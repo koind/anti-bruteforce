@@ -5,7 +5,7 @@ services:
     build:
       context: ../anti-bruteforcet-master
       dockerfile: ../build/tests/Dockerfile
-    command: go test -v  ./tests/integration
+    command: go test -v --tags=integration ./tests/integration
     networks:
       - app_network
 

@@ -21,8 +21,10 @@ type Config struct {
 	} `yaml:"service"`
 
 	Redis struct {
-		Host string `yaml:"host"`
-		Port string `yaml:"port"`
+		Host     string `yaml:"host"`
+		Port     string `yaml:"port"`
+		Password string `yaml:"password"`
+		DB       int    `yaml:"db"`
 	} `yaml:"redis"`
 }
 
@@ -42,6 +44,14 @@ func NewConfig(configPath string) *Config {
 
 func (c *Config) GetRedisAddr() string {
 	return net.JoinHostPort(c.Redis.Host, c.Redis.Port)
+}
+
+func (c *Config) GetPassword() string {
+	return c.Redis.Password
+}
+
+func (c *Config) GetDBNumber() int {
+	return c.Redis.DB
 }
 
 func (c *Config) GetGRPCAddr() string {
