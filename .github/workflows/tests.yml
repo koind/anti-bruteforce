@@ -3,11 +3,9 @@ name: Anti-bruteforce project tests
 on:
   push:
     branches:
-      - '*'
-
+      - master*
 env:
   GO111MODULE: "on"
-
 jobs:
   tests_by_makefile:
     runs-on: ubuntu-latest
