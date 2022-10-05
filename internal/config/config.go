@@ -2,7 +2,7 @@ package config
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v3"
+	yaml3 "gopkg.in/yaml.v3"
 	"io/ioutil"
 	"log"
 	"net"
@@ -35,7 +35,7 @@ func NewConfig(configPath string) *Config {
 	}
 
 	config := &Config{}
-	if err := yaml.Unmarshal(f, config); err != nil {
+	if err := yaml3.Unmarshal(f, config); err != nil {
 		log.Println(fmt.Errorf("fail to decode config file: %w", err))
 	}
 
