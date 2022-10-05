@@ -1,7 +1,9 @@
 name: Anti-bruteforce project tests
 
-# Controls when the workflow will run
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
 
 env:
   GO111MODULE: "on"
