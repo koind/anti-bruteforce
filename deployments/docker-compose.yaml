@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app:
     build:
-      context: ../anti-bruteforce-master
+      context: ../
       dockerfile: ../build/service/Dockerfile
     ports:
       - "50051:50051"
