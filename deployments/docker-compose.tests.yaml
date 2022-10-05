@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_tests:
     build:
-      context: ../
+      context: ../anti-bruteforcet
       dockerfile: ../build/tests/Dockerfile
     command: go test -v --tags=integration ./tests/integration
     networks:
