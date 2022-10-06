@@ -3,8 +3,8 @@ version: "3.7"
 services:
   app:
     build:
-      context: ../anti-bruteforce
-      dockerfile: ../build/service/Dockerfile
+      context: ../
+      dockerfile: ./build/service/Dockerfile
     ports:
       - "50051:50051"
     depends_on:
