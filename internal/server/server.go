@@ -3,11 +3,12 @@ package server
 import (
 	"context"
 	"errors"
-	"github.com/koind/anti-bruteforce/internal/service"
-	"github.com/koind/anti-bruteforce/internal/service/pb"
 	"log"
 	"net"
 	"net/http"
+
+	"github.com/koind/anti-bruteforce/internal/service"
+	"github.com/koind/anti-bruteforce/internal/service/pb"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

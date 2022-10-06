@@ -3,15 +3,16 @@ package main
 import (
 	"context"
 	"flag"
+	"log"
+	"os"
+	"os/signal"
+	"syscall"
+
 	"github.com/koind/anti-bruteforce/internal/bucket"
 	"github.com/koind/anti-bruteforce/internal/config"
 	"github.com/koind/anti-bruteforce/internal/list"
 	"github.com/koind/anti-bruteforce/internal/server"
 	"github.com/koind/anti-bruteforce/internal/service"
-	"log"
-	"os"
-	"os/signal"
-	"syscall"
 )
 
 var configPath string
