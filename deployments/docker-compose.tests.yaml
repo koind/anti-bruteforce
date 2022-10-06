@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app_tests:
+    build:
+      context: ../
+      dockerfile: ./build/tests/Dockerfile
+    command: go test -v --tags=integration ./tests/integration
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    external:
+      name: app_network

@@ -1,0 +1,4 @@
+service:
+  loginMaxLoad: 10
+  passwordMaxLoad: 10
+  ipMaxLoad: 10
