@@ -5,11 +5,12 @@ import (
 	"errors"
 	"github.com/koind/anti-bruteforce/internal/service"
 	"github.com/koind/anti-bruteforce/internal/service/pb"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
 	"net/http"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 type Server struct {

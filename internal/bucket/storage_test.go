@@ -1,9 +1,10 @@
 package bucket
 
 import (
-	"github.com/koind/anti-bruteforce/internal/config"
+	testing "testing"
+
+	config "github.com/koind/anti-bruteforce/internal/config"
 	"github.com/stretchr/testify/require"
-	"testing"
 )
 
 func TestStorage(t *testing.T) {
@@ -44,10 +45,13 @@ func TestStorage(t *testing.T) {
 			}
 		}
 	})
+}
 
+func TestStorageParallel(t *testing.T) {
+	t.Parallel()
 	t.Run("tests parallel", func(t *testing.T) {
 		t.Parallel()
-		cfg = config.NewConfig("../../configs/config.parallel.yml")
+		cfg := config.NewConfig("../../configs/config.parallel.yml")
 		s := NewStorage(cfg)
 		errCount := 0
 		for i := 0; i < 100; i++ {
